@@ -1,0 +1,20 @@
+<div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+  <h1 class="display-4">Branding</h1>
+  <p class="lead">Upload your logo and choose your colour theme here to give your capture portal your unique identity.</p>
+</div>
+
+<div class="container">
+  <%= form_for @setting, url: settings_branding_path do |f| %>
+    <div class="form-group">
+      <%= f.label :logo_image, 'Upload your brand logo' %>
+      <div class="row">
+        <%= f.file_field :logo_image, class: 'form-control-file form-control-lg', placeholder: 'Choose your logo', aria: { describedby: 'email-help-block' } %>
+      </div>
+      <p id="email-help-block" class="form-text text-muted">
+        For best results, upload a nice big logo, but keep the aspect ratio around 1:16
+      </p>
+    </div>
+
+    <%= f.submit('Save', class: 'btn btn-primary') %>
+  <% end %>
+</div>

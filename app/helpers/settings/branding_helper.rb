@@ -1,0 +1,2 @@
+module Settings::BrandingHelper
+end

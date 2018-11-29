@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-lg">
+
+      <%= render 'shared/components/error_messages', object: @lead %>
+
+      <%= form_for @lead do |f| %>
+        <h3>So what's your name?</h3>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-6">
+              <%= f.label :first_name, class: 'sr-only' %>
+              <%= f.text_field(:first_name, class: 'form-control form-control-lg', placeholder: 'First name') %>
+            </div>
+            <div class="col-6">
+              <%= f.label :last_name, class: 'sr-only' %>
+             <%= f.text_field(:last_name, class: 'form-control form-control-lg', placeholder: 'Last name') %>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4">
+
+        <h3>And, how can we get in touch with you?</h3>
+        <div class="form-group">
+          <%= f.label :email, class: 'sr-only' %>
+          <%= f.email_field :email, class: 'form-control form-control-lg', placeholder: 'Pop your email address in here, e.g. happycouple@love.com', aria: { describedby: 'email-help-block' } %>
+          <p id="email-help-block" class="form-text text-muted">
+            We won't send you any messages that aren't related to your enquiry, or share it with anyone else.
+          </p>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :phone, class: 'sr-only' %>
+          <%= f.phone_field :phone, class: 'form-control form-control-lg', placeholder: "And a contact number, if you like...", aria: { describedby: 'phone-help-block' } %>
+
+          <p id="phone-help-block" class="form-text text-muted">
+            Your phone number isn't essential, but it helps us to provide an even more personalised service to you on your special day.
+          </p>
+        </div>
+
+        <%= f.submit('Save your info', class: 'btn btn-primary') %>
+      <% end %>
+    </div>
+  </div>
+</div>

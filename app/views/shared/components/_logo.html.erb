@@ -1,0 +1,7 @@
+<%= link_to root_path do %>
+  <% if @logo %>
+    <%= image_tag @logo, alt: text, class: 'logo-brand' %>
+  <% else %>
+    <%= text %>
+  <% end %>
+<% end %>
